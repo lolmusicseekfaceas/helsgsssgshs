@@ -1,16 +1,6 @@
--- I Love Cats!!!!!!!!!
 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Hardcore Mode!!!",true)
 
--- oi oi oi I am on vacation 
-
-
-local blackListeds = {"Yarik9847"}
-
-if table.find(blackListeds, game.Players.LocalPlayer.Name) then
-
-game.Players.LocalPlayer:Kick("You been kicked from Hardcore: You are shared script to others people. ")
-
-end
 
 -------- goober
 coroutine.wrap(function()
@@ -125,9 +115,9 @@ end
 
 -- åˆ›å»º GUI å…ƒç´ 
 local StaminaGui = createGuiElement("ScreenGui", {Name = "StaminaGui", Parent = Parent, Enabled = true, ZIndexBehavior = Enum.ZIndexBehavior.Sibling})
-local Sprint = createGuiElement("Frame", {Name = "Sprint", Parent = StaminaGui, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = WHITE, BackgroundTransparency = TRANSPARENT, Position = UDim2.new(0.93, 0, 0.5, 0), Size = UDim2.new(0.056, 0, 0.076, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, ZIndex = 1005})
+local Sprint = createGuiElement("Frame", {Name = "Sprint", Parent = StaminaGui, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = WHITE, BackgroundTransparency = TRANSPARENT, Position = UDim2.new(0.93, 0, 0.0, 0), Size = UDim2.new(0.056, 0, 0.076, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, ZIndex = 1005})
 local ImageLabel = createGuiElement("ImageLabel", {Parent = Sprint, BackgroundColor3 = BEIGE, Size = UDim2.new(1, 0, 1, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, Visible = false})
-local Bar = createGuiElement("Frame", {Name = "Bar", Parent = Sprint, AnchorPoint = Vector2.new(0, 0.5), BackgroundColor3 = BROWN, BackgroundTransparency = 0.7, Position = UDim2.new(-2.726, 0, 0.5, 0), Size = UDim2.new(5, 0, 0.2, 0), ZIndex = 0})
+local Bar = createGuiElement("Frame", {Name = "Bar", Parent = Sprint, AnchorPoint = Vector2.new(0, 0.5), BackgroundColor3 = BROWN, BackgroundTransparency = 0.7, Position = UDim2.new(-2.726, 0, 0.5, 0), Size = UDim2.new(5, 0, 0.-1, 0), ZIndex = 0})
 local Fill = createGuiElement("Frame", {Name = "Fill", Parent = Bar, AnchorPoint = Vector2.new(0, 0.5), BackgroundColor3 = BEIGE, Position = UDim2.new(0, 0, 0.5, 0), Size = UDim2.new(1, 0, 1, 0), ZIndex = 2})
 
 -- æ·»å å¥”è·‘æŒ‰é’®
@@ -235,6 +225,8 @@ RunButton.MouseButton1Click:Connect(toggleSprint)
 Hum:SetAttribute("SpeedBoost", 0)
 Hum.WalkSpeed = 16
 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
 ------------ ripper
 coroutine.wrap(function()
     while true do
@@ -304,7 +296,7 @@ local entity = spawner.Create({
 
 entity:SetCallback("OnSpawned", function()
     print("Entity has spawned")
-    loadstring(game:HttpGet("https://pastefy.app/ZHMofq2t/raw"))()
+    loadstring(game:HttpGet("https://pastefy.app/Wg60XG3g/raw"))()
 end)
 
 entity:SetCallback("OnStartMoving", function()
@@ -662,7 +654,7 @@ end)()
 -- scawy
 coroutine.wrap(function()
     while true do
-        wait(150)
+        wait(250)
         
 local roomValue = game.ReplicatedStorage.GameData.LatestRoom.Value
 if not ((roomValue >= 30 and roomValue <= 45) or (roomValue >= 49 and roomValue <= 55)  or (roomValue >= 72 and roomValue <= 80) or (roomValue >= 98 and roomValue <= 101)) then
@@ -834,7 +826,7 @@ local entity = spawner.Create({
 	Entity = {
 		Name = "Deer god",
 		Asset = "rbxassetid://12805689281",
-		HeightOffset = 0
+		HeightOffset = 5
 	},
 	Lights = {
 		Flicker = {
@@ -853,7 +845,7 @@ local entity = spawner.Create({
 		Values = {3.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 25,
+		Speed = 29,
 		Delay = math.random(0, 0),
 		Reversed = false
 	},
@@ -2047,7 +2039,7 @@ end)()
 
 --------------------------- FROSTBITE
 coroutine.wrap(function()
-        wait(240)
+        wait(200)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
         local currentLoadedRoom=workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value]
@@ -2193,6 +2185,14 @@ scare.SoundId = "rbxassetid://5567523008"
 scare.PlaybackSpeed = 3
 scare.Volume = 1
 
+--ReboundComeHere
+coroutine.wrap(function()
+loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
+wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
+wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
 wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
@@ -2206,6 +2206,7 @@ loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
 wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 loadstring(game:HttpGet("https://pastefy.app/LYBjay0S/raw"))()
+end)()
 end)()
 
 --------------------------- FROSTBITE
@@ -2418,6 +2419,14 @@ scare.SoundId = "rbxassetid://5567523008"
 scare.PlaybackSpeed = 3
 scare.Volume = 1
 
+--ReboundComeHereb
+coroutine.wrap(function()
+loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
+wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
+wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
 wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
@@ -2431,6 +2440,7 @@ loadstring(game:HttpGet("https://pastefy.app/lqKr4GyO/raw"))()
 wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 loadstring(game:HttpGet("https://pastefy.app/LYBjay0S/raw"))()
+end)()
 end)()
 
 -- New Seek music and animation loader
@@ -2524,7 +2534,7 @@ workspace.SeekMoving.SeekRigNewClone.StringCheese:Destroy()
 	else
 	end
 end)
-     
+
 -- NEW SEEK 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function() 
     wait(3.5) 
@@ -2547,6 +2557,9 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     local SeekRig = seekNew:FindFirstChild("SeekRig") 
     SeekRig:FindFirstChild("Root").Anchored = true 
 
+   
+    local AnimRun = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun) AnimRun:Play()
+
     spawn(function() 
         while game:GetService("RunService").Heartbeat:Wait() and RealSeek do 
             if RealSeekRig:FindFirstChild("Root") then 
@@ -2564,7 +2577,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 
             if sound:IsA("Sound") then
                 sound.Played:Connect(function()
-                    print("YEEEEE WORKING!!!!") 
+                    
                     local model = workspace:WaitForChild("seeka")
                     local seekRig = model:WaitForChild("SeekRig")
                     local animationController = seekRig:FindFirstChildOfClass("AnimationController")
@@ -2609,7 +2622,6 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
         end 
     end)
 end)
-
 
 ----------------------- NEW PAINTING YOOOOO
 local painters = 1
