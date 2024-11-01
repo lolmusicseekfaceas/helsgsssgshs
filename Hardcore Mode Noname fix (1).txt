@@ -115,7 +115,7 @@ end
 
 -- åˆ›å»º GUI å…ƒç´ 
 local StaminaGui = createGuiElement("ScreenGui", {Name = "StaminaGui", Parent = Parent, Enabled = true, ZIndexBehavior = Enum.ZIndexBehavior.Sibling})
-local Sprint = createGuiElement("Frame", {Name = "Sprint", Parent = StaminaGui, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = WHITE, BackgroundTransparency = TRANSPARENT, Position = UDim2.new(0.93, 0, 0.0, 0), Size = UDim2.new(0.056, 0, 0.076, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, ZIndex = 1005})
+local Sprint = createGuiElement("Frame", {Name = "Sprint", Parent = StaminaGui, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = WHITE, BackgroundTransparency = TRANSPARENT, Position = UDim2.new(0.93, 0, 0.5, 0), Size = UDim2.new(0.056, 0, 0.076, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, ZIndex = 1005})
 local ImageLabel = createGuiElement("ImageLabel", {Parent = Sprint, BackgroundColor3 = BEIGE, Size = UDim2.new(1, 0, 1, 0), SizeConstraint = Enum.SizeConstraint.RelativeYY, Visible = false})
 local Bar = createGuiElement("Frame", {Name = "Bar", Parent = Sprint, AnchorPoint = Vector2.new(0, 0.5), BackgroundColor3 = BROWN, BackgroundTransparency = 0.7, Position = UDim2.new(-2.726, 0, 0.5, 0), Size = UDim2.new(5, 0, 0.-1, 0), ZIndex = 0})
 local Fill = createGuiElement("Frame", {Name = "Fill", Parent = Bar, AnchorPoint = Vector2.new(0, 0.5), BackgroundColor3 = BEIGE, Position = UDim2.new(0, 0, 0.5, 0), Size = UDim2.new(1, 0, 1, 0), ZIndex = 2})
