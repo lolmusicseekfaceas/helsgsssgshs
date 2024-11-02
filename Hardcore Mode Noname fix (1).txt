@@ -1326,7 +1326,7 @@ local entity = spawner.Create({
 	Entity = {
 		Name = "Asitty",
 		Asset = "rbxassetid://16167834229",
-		HeightOffset = 0.5
+		HeightOffset = 0
 	},
 	Lights = {
 		Flicker = {
@@ -1345,7 +1345,7 @@ local entity = spawner.Create({
 		Values = {70.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 626,
+		Speed = 426,
 		Delay = math.random(5, 5),
 		Reversed = false
 	},
@@ -1354,12 +1354,12 @@ local entity = spawner.Create({
 		Type = "Ambush",
 		Min = 5,
 		Max = 5,
-		Delay = 0.7
+		Delay = 0.5
 	},
 	Damage = {
 		Enabled = true,
 		Range = 50,
-		Amount = 130
+		Amount = 1
 	},
 	Crucifixion = {
 		Enabled = false,
@@ -1778,7 +1778,14 @@ end)
 entity:SetCallback("OnDamagePlayer", function(newHealth)
 	if newHealth == 0 then
 		print("Entity has killed the player")
-		firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"You died to an enitity designated as A-60", "It can Appear at any moment, a loud scream will anounce its presence", "When you hear it spawn you must stay out of its reach as soon as possible", "It knows exactly where you are so hiding in different places will not work.."}, "Blue")
+	else
+	game.workspace.Asitty.RushNew.Anchored = false
+	workspace.Asitty.RushNew.Scream:Stop()
+    workspace.Asitty.RushNew.FarStatic:Stop()
+    workspace.Asitty.RushNew.FarScream:Stop()
+wait(5)
+
+	firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"You died to an enitity designated as A-60", "It can Appear at any moment, a loud scream will anounce its presence", "When you hear it spawn you must stay out of its reach as soon as possible", "It knows exactly where you are so hiding in different places will not work.."}, "Blue")
 function GitAud(soundgit,filename)
     SoundName=tostring(SoundName)
     local url=soundgit
@@ -1846,6 +1853,13 @@ game.Players.LocalPlayer.PlayerGui.MainUI.Drip.Image = GitPNG("https://github.co
 wait(0.0001)
 game.Players.LocalPlayer.PlayerGui.MainUI.Drip.Visible = false
 
+game.Players.LocalPlayer.Character.Humanoid:TakeDamage(100)
+
+workspace.Asitty.RushNew.Scream:Play()
+    workspace.Asitty.RushNew.FarStatic:Play()
+    workspace.Asitty.RushNew.FarScream:Play()
+game.workspace.Asitty.RushNew.Anchored = true
+
 local mom = {"rbxasset://gloop_custom/A60OnfSteroids.png", "rbxasset://gloop_custom/A60OnceSteroids.png", "rbxasset://gloop_custom/A60OnaSteroids.png", "rbxasset://gloop_custom/A60OnbSteroids.png", "rbxasset://gloop_custom/A60OncSteroids.png"}
     -- UI Construction
 
@@ -1885,7 +1899,6 @@ local mom = {"rbxasset://gloop_custom/A60OnfSteroids.png", "rbxasset://gloop_cus
 game.TweenService:Create(Background, TweenInfo.new(2.6), {BackgroundTransparency = 1}):Play()
     task.wait(2.65)
     JumpscareGui:Destroy()
-	else
 end
 end)
 
@@ -4950,7 +4963,7 @@ if msg == '/flashlight_purple' or msg == '/Flashlight_purple' or msg == '/PFlash
 				end				
 
 
-if msg == '/a60h' or msg == '/a-60h' or msg == '/A-60h' then
+if msg == '/a60hc' or msg == '/a-60hc' or msg == '/A-60hc' then
 					coroutine.wrap(function ()
                     local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzixser-Script/Function/main/Vynixus_SpawnV2.lua"))()
 
@@ -4961,7 +4974,7 @@ local entity = spawner.Create({
 	Entity = {
 		Name = "Asitty",
 		Asset = "rbxassetid://16167834229",
-		HeightOffset = 0.5
+		HeightOffset = 0
 	},
 	Lights = {
 		Flicker = {
@@ -4987,14 +5000,14 @@ local entity = spawner.Create({
 	Rebounding = {
 		Enabled = true,
 		Type = "Ambush",
-		Min = 8,
-		Max = 8,
-		Delay = 0.7
+		Min = 5,
+		Max = 5,
+		Delay = 0.5
 	},
 	Damage = {
 		Enabled = true,
 		Range = 50,
-		Amount = 130
+		Amount = 1
 	},
 	Crucifixion = {
 		Enabled = false,
@@ -5413,7 +5426,14 @@ end)
 entity:SetCallback("OnDamagePlayer", function(newHealth)
 	if newHealth == 0 then
 		print("Entity has killed the player")
-		firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"You died to an enitity designated as A-60", "It can Appear at any moment, a loud scream will anounce its presence", "When you hear it spawn you must stay out of its reach as soon as possible", "It knows exactly where you are so hiding in different places will not work.."}, "Blue")
+	else
+	game.workspace.Asitty.RushNew.Anchored = false
+	workspace.Asitty.RushNew.Scream:Stop()
+    workspace.Asitty.RushNew.FarStatic:Stop()
+    workspace.Asitty.RushNew.FarScream:Stop()
+wait(5)
+
+	firesignal(game.ReplicatedStorage.RemotesFolder.DeathHint.OnClientEvent, {"You died to an enitity designated as A-60", "It can Appear at any moment, a loud scream will anounce its presence", "When you hear it spawn you must stay out of its reach as soon as possible", "It knows exactly where you are so hiding in different places will not work.."}, "Blue")
 function GitAud(soundgit,filename)
     SoundName=tostring(SoundName)
     local url=soundgit
@@ -5481,6 +5501,13 @@ game.Players.LocalPlayer.PlayerGui.MainUI.Drip.Image = GitPNG("https://github.co
 wait(0.0001)
 game.Players.LocalPlayer.PlayerGui.MainUI.Drip.Visible = false
 
+game.Players.LocalPlayer.Character.Humanoid:TakeDamage(100)
+
+workspace.Asitty.RushNew.Scream:Play()
+    workspace.Asitty.RushNew.FarStatic:Play()
+    workspace.Asitty.RushNew.FarScream:Play()
+game.workspace.Asitty.RushNew.Anchored = true
+
 local mom = {"rbxasset://gloop_custom/A60OnfSteroids.png", "rbxasset://gloop_custom/A60OnceSteroids.png", "rbxasset://gloop_custom/A60OnaSteroids.png", "rbxasset://gloop_custom/A60OnbSteroids.png", "rbxasset://gloop_custom/A60OncSteroids.png"}
     -- UI Construction
 
@@ -5520,7 +5547,6 @@ local mom = {"rbxasset://gloop_custom/A60OnfSteroids.png", "rbxasset://gloop_cus
 game.TweenService:Create(Background, TweenInfo.new(2.6), {BackgroundTransparency = 1}):Play()
     task.wait(2.65)
     JumpscareGui:Destroy()
-	else
 end
 end)
 
