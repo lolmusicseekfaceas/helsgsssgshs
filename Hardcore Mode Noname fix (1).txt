@@ -119,10 +119,12 @@ for i,v in pairs(workspace.CurrentRooms[game:GetService("ReplicatedStorage").Gam
 -- Sprint, if u wanna change keybind pls follow
 loadstring(game:HttpGet("https://pastefy.app/vsBrIVc1/raw"))()
 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
 ------------ ripper
 coroutine.wrap(function()
     while true do
-        wait(179)
+        wait(139)
         local roomValue = game.ReplicatedStorage.GameData.LatestRoom.Value
 if not ((roomValue >= 30 and roomValue <= 45) or (roomValue >= 49 and roomValue <= 55)  or (roomValue >= 72 and roomValue <= 80) or (roomValue >= 98 and roomValue <= 101)) then
 wait()
@@ -2233,7 +2235,7 @@ end)()
 
 --------------------------- FROSTBITE
 coroutine.wrap(function()
-        wait(200)
+        wait(180)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
         local currentLoadedRoom=workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value]
@@ -2877,8 +2879,6 @@ local cloning = currentpainting:FindFirstChild("InteractPrompt"):Clone()
   end
  end
 end)
-
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 msg("Hardcore initiated")
 wait(3)
