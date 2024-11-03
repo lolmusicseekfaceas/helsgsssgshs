@@ -1,4 +1,24 @@
 
+local function GetGitSoundID(GithubSnd,SoundName)
+		SoundName=tostring(SoundName)
+		local url=GithubSnd
+		SoundName=tostring(SoundName)
+		local url=GithubSnd
+		FileName = SoundName
+		writefile("customObject_Sound_"..FileName..".mp3", game:HttpGet(url))
+		return (getcustomasset or getsynasset)("customObject_Sound_"..FileName..".mp3")
+	end
+
+--Ambiencea
+coroutine.wrap(function()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+wait(0.0005)
+game.Workspace.CurrentRooms["50"].FigureSetup.Ambience.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/raw/main/Figure%20Ambience.mp3?raw=true","NewFigure")
+game.Workspace.CurrentRooms["50"].FigureSetup.AmbienceEnd.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Figure%20Start.mp3?raw=true","NewFigureStart")
+game.Workspace.CurrentRooms["50"].FigureSetup.AmbienceStart.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Figure%20End.mp3?raw=true","NewFigureEnd")
+end)
+end)()
+
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Hardcore Mode!!!",true)
 
 
@@ -2677,12 +2697,21 @@ workspace.ChildAdded:Connect(function(seek)
 				v.Transparency = 1
 			end
 		end
-		local seekNew:Model = game:GetObjects("rbxassetid://11664451634")[1]
-		seekNew.Parent = workspace
+		local seekNew = game:GetObjects("rbxassetid://11664451634")[1]
+	seekNew.Parent = workspace
+	 seekNew.Name = "SeekMoving"
 		seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
-		local Weld = Instance.new("WeldConstraint",seekNew)
+		 local Weld = Instance.new("WeldConstraint",seekNew)
 		Weld.Part0 = seekNew.PrimaryPart
-		Weld.Part1 = workspace.SeekMovingNewClone.Figure
+		Weld.Part1 = workspace.SeekMoving.Figure
+		local SeekRig = Workspace.SeekMoving:FindFirstChild("SeekRig")
+   	SeekRig:FindFirstChild("Root").Anchored = true
+wait(8)
+	   local raiser = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRaise) 
+raiser:Play()
+		raiser.Stopped:Wait()
+        local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
+        Ahsfs:Play()
 	else
 
 	end
