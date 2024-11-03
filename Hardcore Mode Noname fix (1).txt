@@ -2699,14 +2699,15 @@ workspace.ChildAdded:Connect(function(seek)
 		end
 		local seekNew = game:GetObjects("rbxassetid://11664451634")[1]
 	seekNew.Parent = workspace
-	 seekNew.Name = "SeekMoving"
+
 		seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
 		 local Weld = Instance.new("WeldConstraint",seekNew)
 		Weld.Part0 = seekNew.PrimaryPart
-		Weld.Part1 = workspace.SeekMoving.Figure
+		Weld.Part1 = workspace.SeekMovingNewClone.Figure
+wait()
 		local SeekRig = Workspace.SeekMoving:FindFirstChild("SeekRig")
    	SeekRig:FindFirstChild("Root").Anchored = true
-wait(8)
+wait()
 	   local raiser = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRaise) 
 raiser:Play()
 		raiser.Stopped:Wait()
@@ -2760,9 +2761,6 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     local SeekRig = seekNew:FindFirstChild("SeekRig") 
     SeekRig:FindFirstChild("Root").Anchored = true 
 
-   
-    local AnimRun = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun) AnimRun:Play()
-
     spawn(function() 
         while game:GetService("RunService").Heartbeat:Wait() and RealSeek do 
             if RealSeekRig:FindFirstChild("Root") then 
@@ -2783,6 +2781,12 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
                     
                     local model = workspace:WaitForChild("seeka")
                     local seekRig = model:WaitForChild("SeekRig")
+                    local raiser = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRaise) 
+                       raiser:Play()
+	                   	raiser.Stopped:Wait()
+                              local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
+                                  Ahsfs:Play()
+        
                     local animationController = seekRig:FindFirstChildOfClass("AnimationController")
 
                     if animationController then
