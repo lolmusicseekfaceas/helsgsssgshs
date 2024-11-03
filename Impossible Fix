@@ -35,7 +35,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 
 --------Smiler
 coroutine.wrap(function()
-while true do wait(341)
+while true do wait(241)
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait()
         local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzixser-Script/Function/main/Vynixus_SpawnV2.lua"))()
@@ -361,14 +361,14 @@ end)()
 
 --------Blink
 coroutine.wrap(function()
-while true do wait(432)
+while true do wait(332)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-models/refs/heads/main/blinky"))()
 end
 end)()
 
 --------Wh1t3
 coroutine.wrap(function()
-while true do wait(551)
+while true do wait(431)
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(2)
         local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzixser-Script/Function/main/Vynixus_SpawnV2.lua"))()
