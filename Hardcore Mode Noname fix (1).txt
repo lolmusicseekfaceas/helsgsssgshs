@@ -1,4 +1,3 @@
-
 function GitAud(soundgit,filename)
     SoundName=tostring(SoundName)
     local url=soundgit
@@ -13,10 +12,6 @@ function CustomGitSound(soundlink, vol, filename)
     Sound.Parent = workspace
     Sound.Volume = 0
     Sound:Play()
-    wait(0.2)
-    Sound:Stop()
-    wait()
-    Sound:Destroy()
 end
 
 CustomGitSound("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", 1, "Hereicomeseekog")
@@ -2672,7 +2667,9 @@ coroutine.wrap(function()
                 end
                 return (getcustomasset or getsynasset)(SoundName .. ".mp3")
             end
-            workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxasset://custom_gloop/Hereicomeseekog.mp3"		
+
+            local a = game.Workspace.SeekMovingNewClone
+            a.SeekMusic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
         end
     end)
 end)()
@@ -2718,17 +2715,23 @@ workspace.ChildAdded:Connect(function(seek)
 			end
 		end
 		local seekNew = game:GetObjects("rbxassetid://11664451634")[1]
-	seekNew.Parent = workspace
-	 seekNew.Name = "SeekMoving"
-		seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
+         seekNew.Parent = workspace.SeekMovingNewClone.Figure
 		 local Weld = Instance.new("WeldConstraint",seekNew)
 		Weld.Part0 = seekNew.PrimaryPart
 		Weld.Part1 = workspace.SeekMovingNewClone.Figure
-		local SeekRig = Workspace.SeekMoving:FindFirstChild("SeekRig")
+wait()
+		local SeekRig = workspace.SeekMovingNewClone.Figure.SeekMoving:FindFirstChild("SeekRig")
    	SeekRig:FindFirstChild("Root").Anchored = true
-   wait()
-       local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
-       Ahsfs:Play()
+wait()
+game.workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxasset://custom_gloop/Hereicomeseekog.mp3"
+wait(0.2)
+local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
+Ahsfs:Play()
+
+while true do wait()
+seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
+end
+end)()
 	else
 
 	end
@@ -2738,6 +2741,7 @@ end)
 workspace.ChildAdded:Connect(function(seek)
 	if seek.Name == "SeekMovingNewClone" then
 		wait(0.5)
+		game.workspace.SeekMovingNewClone.SeekRig:Destroy()
 	    workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMovinNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
@@ -2753,92 +2757,6 @@ workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMoving.SeekRigNewClone.StringCheese:Destroy()
 	else
 	end
-end)
-
--- NEW SEEK 
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function() 
-    wait(3.5) 
-    if not workspace:FindFirstChild("SeekMov") then 
-        return  
-    end 
-    
-    local RealSeek = workspace:FindFirstChild("SeekMovingNewClone") 
-    local RealSeekRig = RealSeek:FindFirstChild("SeekRig") 
-    seekNew.Name = "seeka" 
-
-    for _, v in pairs(seekNew.Figure:GetChildren()) do 
-        if v:IsA("Sound") then 
-            v:Stop() 
-        end 
-    end 
-
-    RealSeekRig.Head.Eye:Destroy() 
-    RealSeekRig.Head.Black:Destroy() 
-
-   
-    local AnimRun = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun) AnimRun:Play()
-
-    spawn(function() 
-        while game:GetService("RunService").Heartbeat:Wait() and RealSeek do 
-            if RealSeekRig:FindFirstChild("Root") then 
-                SeekRig:FindFirstChild("Root").CFrame = RealSeekRig:FindFirstChild("Root").CFrame 
-            end 
-            for _, v in pairs(RealSeek.Figure:GetChildren()) do 
-                RealSeek.Figure.Footsteps:Stop() 
-                RealSeek.Figure.FootstepsFar:Stop() 
-            end 
-            for _, v in pairs(RealSeekRig:GetChildren()) do 
-                if v:IsA("BasePart") then 
-                    v.Transparency = 1 
-                    
-                    local sound = a.Ambience
-
-            if sound:IsA("Sound") then
-                sound.Played:Connect(function()
-                    
-                    local model = workspace:WaitForChild("seeka")
-                    local seekRig = model:WaitForChild("SeekRig")
-                    local animationController = seekRig:FindFirstChildOfClass("AnimationController")
-
-                    if animationController then
-                        local anim = seekRig:FindFirstChild("AnimRaise")
-                        
-                        if anim and anim:IsA("Animation") then
-                            local animationTrack = animationController:LoadAnimation(anim)
-                            animationTrack:Play()
-                        else
-                            warn("AnimRaise not found or is not an animation.")
-                        end
-                    else
-                        warn("AnimationController not found in SeekRig.")
-                    end
-                    
-                    wait(8.20)
-
-                    local model = workspace:WaitForChild("seeka")
-                    local seekRig = model:WaitForChild("SeekRig")
-                    local animationController = seekRig:FindFirstChildOfClass("AnimationController")
-
-                    if animationController then
-                        local anim = seekRig:FindFirstChild("AnimRun")
-                        
-                        if anim and anim:IsA("Animation") then
-                            local animationTrack = animationController:LoadAnimation(anim)
-                            animationTrack:Play()
-                        else
-                            warn("AnimRun not found or is not an animation.")
-                        end
-                    else
-                        warn("AnimationController not found in SeekRig.")
-                    end
-                end)
-            else
-                warn("Sound not found or is not an instance of Sound.")
-            end
-                end 
-            end 
-        end 
-    end)
 end)
 
 ----------------------- NEW PAINTING YOOOOO
