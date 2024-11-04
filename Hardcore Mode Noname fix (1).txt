@@ -2720,12 +2720,16 @@ workspace.ChildAdded:Connect(function(seek)
 		local Weld = Instance.new("WeldConstraint",getSeek)
 		Weld.Part0 = getSeek.PrimaryPart
 		Weld.Part1 = workspace.SeekMovingNewClone.Figure
+        workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxasset://custom_gloop/Hereicomeseekog.mp3"
+        workspace.SeekMovingNewClone.SeekRig:Destroy()
 		local SeekRig = workspace.SeekMovingNewClone.Figure.SeekMoving:FindFirstChild("SeekRig")
     	SeekRig:FindFirstChild("Root").Anchored = true
+    
        local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
        Ahsfs:Play()
+       
        while true do wait()
-        seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
+        getSeek:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
        end
 	else
 
@@ -2756,14 +2760,12 @@ end)
 -- NEW SEEK 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function() 
     wait(3.5) 
-    if not workspace:FindFirstChild("SeekewClone") then 
+    if not workspace:FindFirstChild("SeekMovingNewClone") then 
         return  
     end 
     
     local RealSeek = workspace:FindFirstChild("SeekMovingNewClone") 
     local RealSeekRig = RealSeek:FindFirstChild("SeekRig") 
-    local seekNew = game:GetObjects("rbxassetid://11664451634")[1]  
-    seekNew.Name = "seek2" 
 
     for _, v in pairs(seekNew.Figure:GetChildren()) do 
         if v:IsA("Sound") then 
