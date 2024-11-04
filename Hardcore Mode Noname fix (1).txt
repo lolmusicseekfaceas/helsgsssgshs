@@ -1,4 +1,26 @@
 
+function GitAud(soundgit,filename)
+    SoundName=tostring(SoundName)
+    local url=soundgit
+    local FileName = filename
+    writefile(FileName..".mp3", game:HttpGet(url))
+    return (getcustomasset or getsynasset)(FileName..".mp3")
+end
+
+function CustomGitSound(soundlink, vol, filename)
+    local Sound = Instance.new("Sound")
+    Sound.SoundId = GitAud(soundlink, filename)
+    Sound.Parent = workspace
+    Sound.Volume = 0
+    Sound:Play()
+    wait()
+    Sound:Stop()
+    wait()
+    Sound:Destroy()
+end
+
+CustomGitSound("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", 1, "Hereicomeseekog")
+
 local function GetGitSoundID(GithubSnd,SoundName)
 		SoundName=tostring(SoundName)
 		local url=GithubSnd
@@ -2651,8 +2673,7 @@ coroutine.wrap(function()
                 return (getcustomasset or getsynasset)(SoundName .. ".mp3")
             end
 
-            local a = game.Workspace.SeekMovingNewClone
-            a.SeekMusic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
+            workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxasset://custom_gloop/Hereicomeseekog.mp3"		
         end
     end)
 end)()
@@ -2688,6 +2709,7 @@ end)
 end)()
 
 -- Seek Model
+coroutine.wrap(function()
 workspace.ChildAdded:Connect(function(seek)
 	if seek.Name == "SeekMovingNewClone" then
 		wait(0.5)
@@ -2697,19 +2719,81 @@ workspace.ChildAdded:Connect(function(seek)
 				v.Transparency = 1
 			end
 		end
-		local seekNew = game:GetObjects("rbxassetid://11664451634")[1]
-	seekNew.Parent = workspace
-	 seekNew.Name = "SeekMoving"
-		seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
-		 local Weld = Instance.new("WeldConstraint",seekNew)
-		Weld.Part0 = seekNew.PrimaryPart
-		Weld.Part1 = workspace.SeekMovingNewClone.Figure
-		local SeekRig = Workspace.SeekMoving:FindFirstChild("SeekRig")
-   	SeekRig:FindFirstChild("Root").Anchored = true
+		loadstring(game:HttpGet("https://pastefy.app/ZRhHpYsc/raw"))()
+	else
+
+  
+	end
+end)
+end)()
+
+-- Seek ModelNew
+coroutine.wrap(function()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+workspace.ChildAdded:Connect(function(seek)
+	if seek.Name == "SeekMovingNewClone" then
+		wait(0.5)
+	    workspace.SeekMovingNewClone.SeekRig.Head.Eye.Decal.Texture = "rbxassetid://0"
+		for i,v in pairs(workspace.SeekMovingNewClone.SeekRig:GetDescendants()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 1
+			end
+		end
+		 loadstring(game:HttpGet("https://pastefy.app/7KMSHMdQ/raw"))()
 	else
 
 	end
 end)
+end)()
 
 -- Seek Model 2
 workspace.ChildAdded:Connect(function(seek)
@@ -2753,10 +2837,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     RealSeekRig.Head.Black:Destroy() 
     local SeekRig = seekNew:FindFirstChild("SeekRig") 
     SeekRig:FindFirstChild("Root").Anchored = true 
-
-   
-    local AnimRun = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun) AnimRun:Play()
-
+ 
     spawn(function() 
         while game:GetService("RunService").Heartbeat:Wait() and RealSeek do 
             if RealSeekRig:FindFirstChild("Root") then 
