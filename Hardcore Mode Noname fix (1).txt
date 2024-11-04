@@ -2731,7 +2731,6 @@ Ahsfs:Play()
 while true do wait()
 seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
 end
-end)()
 	else
 
 	end
