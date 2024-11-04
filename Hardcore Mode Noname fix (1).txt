@@ -2654,26 +2654,6 @@ loadstring(game:HttpGet("https://pastefy.app/LYBjay0S/raw"))()
 end)()
 end)()
 
--- New Seek music and animation loader
-coroutine.wrap(function()
-    game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-        wait(0.0005)
-        if game.Workspace:FindFirstChild("SeekMovingNewClone") then
-
-            function ReplaceAudGit(GithubSnd, SoundName)
-                local url = GithubSnd
-                if not isfile(SoundName .. ".mp3") then
-                    writefile(SoundName .. ".mp3", game:HttpGet(url))
-                end
-                return (getcustomasset or getsynasset)(SoundName .. ".mp3")
-            end
-
-            local a = game.Workspace.SeekMovingNewClone
-            a.SeekMusic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
-        end
-    end)
-end)()
-
 -- Optional Seek Eyes it might lag your device
 coroutine.wrap(function()
     while true do
@@ -2704,6 +2684,26 @@ end)
     end
 end)()
 
+-- New Seek music and animation loader
+coroutine.wrap(function()
+    game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+        wait(0.0005)
+        if game.Workspace:FindFirstChild("SeekMovingNewClone") then
+
+            function ReplaceAudGit(GithubSnd, SoundName)
+                local url = GithubSnd
+                if not isfile(SoundName .. ".mp3") then
+                    writefile(SoundName .. ".mp3", game:HttpGet(url))
+                end
+                return (getcustomasset or getsynasset)(SoundName .. ".mp3")
+            end
+
+            local a = game.Workspace.SeekMovingNewClone
+            a.SeekMusic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
+        end
+    end)
+end)()
+
 -- Seek Model
 workspace.ChildAdded:Connect(function(seek)
 	if seek.Name == "SeekMovingNewClone" then
@@ -2714,23 +2714,19 @@ workspace.ChildAdded:Connect(function(seek)
 				v.Transparency = 1
 			end
 		end
-		local seekNew = game:GetObjects("rbxassetid://11664451634")[1]
-         seekNew.Parent = workspace.SeekMovingNewClone.Figure
-		 local Weld = Instance.new("WeldConstraint",seekNew)
-		Weld.Part0 = seekNew.PrimaryPart
+		local getSeek = game:GetObjects("rbxassetid://11664451634")[1]
+		getSeek.Parent = workspace.SeekMovingNewClone.Figure
+		getSeek:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
+		local Weld = Instance.new("WeldConstraint",getSeek)
+		Weld.Part0 = getSeek.PrimaryPart
 		Weld.Part1 = workspace.SeekMovingNewClone.Figure
-wait()
 		local SeekRig = workspace.SeekMovingNewClone.Figure.SeekMoving:FindFirstChild("SeekRig")
-   	SeekRig:FindFirstChild("Root").Anchored = true
-wait()
-game.workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxasset://custom_gloop/Hereicomeseekog.mp3"
-wait(0.2)
-local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
-Ahsfs:Play()
-
-while true do wait()
-seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
-end
+    	SeekRig:FindFirstChild("Root").Anchored = true
+       local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
+       Ahsfs:Play()
+       while true do wait()
+        seekNew:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
+       end
 	else
 
 	end
@@ -2740,7 +2736,6 @@ end)
 workspace.ChildAdded:Connect(function(seek)
 	if seek.Name == "SeekMovingNewClone" then
 		wait(0.5)
-		game.workspace.SeekMovingNewClone.SeekRig:Destroy()
 	    workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMovinNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
@@ -2756,6 +2751,93 @@ workspace.SeekMovingNewClone.SeekRig.StringCheese:Destroy()
 workspace.SeekMoving.SeekRigNewClone.StringCheese:Destroy()
 	else
 	end
+end)
+     
+-- NEW SEEK 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function() 
+    wait(3.5) 
+    if not workspace:FindFirstChild("SeekewClone") then 
+        return  
+    end 
+    
+    local RealSeek = workspace:FindFirstChild("SeekMovingNewClone") 
+    local RealSeekRig = RealSeek:FindFirstChild("SeekRig") 
+    local seekNew = game:GetObjects("rbxassetid://11664451634")[1]  
+    seekNew.Name = "seek2" 
+
+    for _, v in pairs(seekNew.Figure:GetChildren()) do 
+        if v:IsA("Sound") then 
+            v:Stop() 
+        end 
+    end 
+
+    RealSeekRig.Head.Eye:Destroy() 
+    RealSeekRig.Head.Black:Destroy() 
+    seekNew.Parent = workspace 
+    local SeekRig = seekNew:FindFirstChild("SeekRig") 
+    SeekRig:FindFirstChild("Root").Anchored = true 
+
+    spawn(function() 
+        while game:GetService("RunService").Heartbeat:Wait() and RealSeek do 
+            if RealSeekRig:FindFirstChild("Root") then 
+                SeekRig:FindFirstChild("Root").CFrame = RealSeekRig:FindFirstChild("Root").CFrame 
+            end 
+            for _, v in pairs(RealSeek.Figure:GetChildren()) do 
+                RealSeek.Figure.Footsteps:Stop() 
+                RealSeek.Figure.FootstepsFar:Stop() 
+            end 
+            for _, v in pairs(RealSeekRig:GetChildren()) do 
+                if v:IsA("BasePart") then 
+                    v.Transparency = 1 
+                    
+                    local sound = a.Ambience
+
+            if sound:IsA("Sound") then
+                sound.Played:Connect(function()
+                    print("YEEEEE WORKING!!!!") 
+                    local model = workspace:WaitForChild("seek2")
+                    local seekRig = model:WaitForChild("SeekRig")
+                    local animationController = seekRig:FindFirstChildOfClass("AnimationController")
+
+                    if animationController then
+                        local anim = seekRig:FindFirstChild("AnimRaise")
+                        
+                        if anim and anim:IsA("Animation") then
+                            local animationTrack = animationController:LoadAnimation(anim)
+                            animationTrack:Play()
+                        else
+                            warn("AnimRaise not found or is not an animation.")
+                        end
+                    else
+                        warn("AnimationController not found in SeekRig.")
+                    end
+                    
+                    wait(8.20)
+
+                    local model = workspace:WaitForChild("seek2")
+                    local seekRig = model:WaitForChild("SeekRig")
+                    local animationController = seekRig:FindFirstChildOfClass("AnimationController")
+
+                    if animationController then
+                        local anim = seekRig:FindFirstChild("AnimRun")
+                        
+                        if anim and anim:IsA("Animation") then
+                            local animationTrack = animationController:LoadAnimation(anim)
+                            animationTrack:Play()
+                        else
+                            warn("AnimRun not found or is not an animation.")
+                        end
+                    else
+                        warn("AnimationController not found in SeekRig.")
+                    end
+                end)
+            else
+                warn("Sound not found or is not an instance of Sound.")
+            end
+                end 
+            end 
+        end 
+    end)
 end)
 
 ----------------------- NEW PAINTING YOOOOO
