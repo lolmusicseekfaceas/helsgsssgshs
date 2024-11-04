@@ -11,9 +11,9 @@ function CustomGitSound(soundlink, vol, filename)
     local Sound = Instance.new("Sound")
     Sound.SoundId = GitAud(soundlink, filename)
     Sound.Parent = workspace
-    Sound.Volume = 3
+    Sound.Volume = 0
     Sound:Play()
-    wait(10)
+    wait(0.2)
     Sound:Stop()
     wait()
     Sound:Destroy()
