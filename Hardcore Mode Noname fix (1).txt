@@ -136,6 +136,8 @@ for i,v in pairs(workspace.CurrentRooms[game:GetService("ReplicatedStorage").Gam
 -- Sprint, if u wanna change keybind pls follow
 loadstring(game:HttpGet("https://pastefy.app/vsBrIVc1/raw"))()
 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
 ------------ ripper
 coroutine.wrap(function()
     while true do
@@ -2889,8 +2891,6 @@ local cloning = currentpainting:FindFirstChild("InteractPrompt"):Clone()
   end
  end
 end)
-
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 msg("Hardcore initiated")
 wait(3)
