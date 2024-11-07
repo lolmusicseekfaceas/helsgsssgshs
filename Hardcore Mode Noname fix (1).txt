@@ -2743,8 +2743,8 @@ coroutine.wrap(function()
                 return (getcustomasset or getsynasset)(SoundName .. ".mp3")
             end
 
-            local a = game.Workspace.SeekMovingNewClone
-            a.SeekMusic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
+            local a = game.Workspace.SevingNewClone
+            a.Seesic.SoundId = ReplaceAudGit("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", "NewSeek")
         end
     end)
 end)()
