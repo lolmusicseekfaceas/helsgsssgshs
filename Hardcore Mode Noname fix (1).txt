@@ -141,7 +141,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 ------------ ripper
 coroutine.wrap(function()
     while true do
-        wait(179)
+        wait(109)
         local roomValue = game.ReplicatedStorage.GameData.LatestRoom.Value
 if not ((roomValue >= 30 and roomValue <= 45) or (roomValue >= 49 and roomValue <= 55)  or (roomValue >= 72 and roomValue <= 80) or (roomValue >= 98 and roomValue <= 101)) then
 wait()
@@ -480,7 +480,7 @@ local entity = spawner.Create({
 		Values = {3.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 120,
+		Speed = 220,
 		Delay = math.random(2, 2),
 		Reversed = false
 	},
@@ -778,8 +778,8 @@ local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzix
 
 local entity = spawner.Create({
 	Entity = {
-		Name = "Deer god",
-		Asset = "rbxassetid://12805689281",
+		Name = "Deergod",
+		Asset = "rbxassetid://18866321970",
 		HeightOffset = 5
 	},
 	Lights = {
@@ -794,12 +794,12 @@ local entity = spawner.Create({
 		Enabled = false
 	},
 	CameraShake = {
-		Enabled = true,
+		Enabled = false,
 		Range = 100,
 		Values = {3.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 29,
+		Speed = 32,
 		Delay = math.random(0, 0),
 		Reversed = false
 	},
@@ -812,8 +812,8 @@ local entity = spawner.Create({
 	},
 	Damage = {
 		Enabled = true,
-		Range = 100,
-		Amount = 6
+		Range = 50,
+		Amount = 100
 	},
 	Crucifixion = {
 		Enabled = true,
@@ -848,7 +848,7 @@ function CustomGitSound(soundlink, vol, filename)
     local Followed = Instance.new("Sound")
     Followed.SoundId = GitAud(soundlink, filename)
     Followed.Parent = workspace
-    Followed.Volume = 2
+    Followed.Volume = 4
     Followed:Play()
 end
 
@@ -1299,7 +1299,7 @@ local entity = spawner.Create({
 		Values = {50.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 626,
+		Speed = 826,
 		Delay = math.random(5, 5),
 		Reversed = false
 	},
@@ -1308,7 +1308,7 @@ local entity = spawner.Create({
 		Type = "Ambush",
 		Min = 5,
 		Max = 5,
-		Delay = 1
+		Delay = 0.2
 	},
 	Damage = {
 		Enabled = true,
@@ -2295,7 +2295,7 @@ end)()
 
 --------------------------- FROSTBITE
 coroutine.wrap(function()
-        wait(200)
+        wait(267)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
         local currentLoadedRoom=workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value]
@@ -2467,7 +2467,7 @@ end)()
 
 --------------------------- FROSTBITE
 coroutine.wrap(function()
-        wait(240)
+        wait()
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
@@ -2770,8 +2770,19 @@ workspace.ChildAdded:Connect(function(seek)
 		local SeekRig = workspace.SeekMovingNewClone.Figure.SeekMoving:FindFirstChild("SeekRig")
     	SeekRig:FindFirstChild("Root").Anchored = true
     
-       local Ahsfs = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun)
-       Ahsfs:Play()
+       local seksound = workspace.SeekMovingNewClone.SeekMusic
+	seksound.Played:Connect(function()
+		spawn(function()
+			wait(7)
+			workspace.SeekMovingNewClone.Figure.SeekMoving.Figure.FootseptsFar:Play()
+			 workspace.SeekMovingNewClone.Figure.SeekMoving.Figure.Footsteps:Play()
+			 workspace.SeekMovingNewClone.Figure.SeekMoving.Figure.Splashing:Play()
+			 workspace.SeekMovingNewClone.Figure.SeekMoving.Figure["Splashing Far"]:Play()
+		end)
+		local raiser = SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRaise) raiser:Play()
+		raiser.Stopped:Wait()
+		SeekRig.AnimationController:LoadAnimation(SeekRig.AnimRun):Play()
+end)
        
 --SeekPivo
   coroutine.wrap(function()
