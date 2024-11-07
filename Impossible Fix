@@ -35,7 +35,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 
 --------Smiler
 coroutine.wrap(function()
-while true do wait(181)
+while true do wait(281)
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait()
         local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzixser-Script/Function/main/Vynixus_SpawnV2.lua"))()
@@ -133,7 +133,7 @@ local entity = spawner.Create({
 		Values = {5.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 950,
+		Speed = 1250,
 		Delay = math.random(0, 0),
 		Reversed = false
 	},
@@ -142,7 +142,7 @@ local entity = spawner.Create({
 		Type = "Ambush",
 		Min = 6,
 		Max = 6,
-		Delay = 0.1
+		Delay = 1
 	},
 	Damage = {
 		Enabled = true,
@@ -501,14 +501,14 @@ end)()
 
 --------Blink
 coroutine.wrap(function()
-while true do wait(332)
+while true do wait(432)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-models/refs/heads/main/blinky"))()
 end
 end)()
 
 --------Wh1t3
 coroutine.wrap(function()
-while true do wait(431)
+while true do wait(410)
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(2)
         local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yuzixser-Script/Function/main/Vynixus_SpawnV2.lua"))()
