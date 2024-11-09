@@ -1,0 +1,224 @@
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Hardcore Mode!!!",true)
+
+--Ambiencea
+coroutine.wrap(function()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+wait(0.0005)
+game.Workspace.CurrentRooms["50"].FigureSetup.Ambience.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/raw/main/Figure%20Ambience.mp3?raw=true","NewFigure")
+game.Workspace.CurrentRooms["50"].FigureSetup.AmbienceEnd.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Figure%20Start.mp3?raw=true","NewFigureStart")
+game.Workspace.CurrentRooms["50"].FigureSetup.AmbienceStart.SoundId = GetGitSoundID("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Figure%20End.mp3?raw=true","NewFigureEnd")
+end)
+end)()
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.Health.Music.Blue.SoundId = "rbxassetid://10472612727" 
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.Health.Music.Blue.Pitch = 0.55 
+ 
+
+local Lighting = game:GetService("Lighting")
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.2
+Lighting.FogEnd = 200
+Lighting.FogStart = 5
+Lighting.FogColor = Color3.new(0, 0, 0)
+
+game.ReplicatedStorage.Sounds.BulbZap.SoundId = "rbxassetid://4398878054"  
+ 
+if workspace:FindFirstChild("hardcoreInit") then msg("Executed 2 times! Returning...") return end
+
+local EnabledBool = Instance.new("BoolValue",workspace)
+EnabledBool.Name = "hardcoreInit"
+
+local LightReplaceModel = game:GetObjects("rbxassetid://12543866876")[1] or nil
+
+--Change Light Model
+coroutine.wrap(function()
+    while true do   
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+for i,v in pairs(workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value].Assets.Light_Fixtures:GetDescendants()) do
+	if v.Name == "LightStand" then
+		if game.ReplicatedStorage.GameData.LatestRoom.Value < 53 then
+			local torch = LightReplaceModel:Clone()
+			torch.Parent = workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value].Assets.Light_Fixtures
+			torch.LightFixture.Changed:Connect(function()
+				torch.LightFixture.Neon.atachm["Ok you cannot tell me this isnt good"].Enabled = torch.LightFixture.PointLight.Enabled
+					torch.LightFixture.Neon["Bright sh idfk"].ParticleEmitter.Enabled = torch.LightFixture.PointLight.Enabled
+					torch.LightFixture:WaitForChild('Dust').ParticleEmitter.Enabled = torch.LightFixture.PointLight.Enabled 
+			end)
+			torch:PivotTo(v:GetPivot())
+			v:Destroy()
+
+		else
+			v:Destroy()
+		end
+	  end
+   end
+  end
+end)()
+
+for i,v in pairs(workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value].Assets.Light_Fixtures:GetDescendants()) do
+	if v.Name == "LightStand" then
+		if game.ReplicatedStorage.GameData.LatestRoom.Value < 53 then
+			local torch = LightReplaceModel:Clone()
+			torch.Parent = workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value].Assets.Light_Fixtures
+			torch.LightFixture.Changed:Connect(function()
+				torch.LightFixture.Neon.atachm["Ok you cannot tell me this isnt good"].Enabled = torch.LightFixture.PointLight.Enabled
+					torch.LightFixture.Neon["Bright sh idfk"].ParticleEmitter.Enabled = torch.LightFixture.PointLight.Enabled
+					torch.LightFixture:WaitForChild('Dust').ParticleEmitter.Enabled = torch.LightFixture.PointLight.Enabled 
+			end)
+			torch:PivotTo(v:GetPivot())
+			v:Destroy()
+
+		else
+			v:Destroy()
+		end
+	  end
+   end
+
+--Sprint, if u wanna change keybind pls follow
+loadstring(game:HttpGet("https://pastefy.app/zp6LTE2D/raw"))()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+function Ripper()
+pcall(function()
+while true do wait(112)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoanphuc/testhshs/refs/heads/main/hshsbsbshripper"))()
+end
+end)
+end   
+
+function Frostbite()
+pcall(function()
+wait(140)
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+loadstring(game:HttpGet("https://pastefy.app/Zb1au2BU/raw"))()
+end)
+end   
+
+function Rebound()
+pcall(function()
+wait(156)
+loadstring(game:HttpGet("https://pastefy.app/k2WE09WV/raw"))()
+end)
+end   
+
+function Shocker()
+pcall(function()
+while true do 
+wait(math.random(96, 97))
+loadstring(game:HttpGet("https://pastefy.app/1mLzDwTN/raw"))()
+end
+end)
+end   
+
+function DeerGod()
+pcall(function()
+while true do wait(232)
+loadstring(game:HttpGet("https://pastefy.app/17nNEGQe/raw"))()
+end
+end)
+end   
+
+function Dread()
+pcall(function()
+while true do wait(712)
+loadstring(game:HttpGet("https://github.com/huyhoanphuc/testhshs/raw/refs/heads/main/Dreaddhs"))()
+end
+end)
+end   
+
+function SeekNew()
+pcall(function()
+wait()
+loadstring(game:HttpGet("https://pastefy.app/VNo4Hitm/raw"))()
+end)
+end   
+
+function Silence()
+pcall(function()
+while true do wait(661)
+loadstring(game:HttpGet("https://pastefy.app/87ReQWOF/raw"))()
+end
+end)
+end   
+
+function Cease()
+pcall(function()
+while true do wait(216)
+loadstring(game:HttpGet("https://github.com/huyhoanphuc/testhshs/raw/refs/heads/main/hdisgvshceaseeee"))()
+end
+end)
+end   
+
+function Asitty()
+pcall(function()
+wait()
+loadstring(game:HttpGet("https://github.com/huyhoanphuc/testhshs/raw/refs/heads/main/A660hsgakahbsjhshsvhshsbachubbyhardmode"))()
+end)
+end   
+
+
+
+pcall(function()
+local RipperPas = coroutine.wrap(Ripper)
+RipperPas()
+end)
+pcall(function()
+local FrostbitePas = coroutine.wrap(Frostbite)
+FrostbitePas()
+end)
+pcall(function()
+local ReboundPas = coroutine.wrap(Rebound)
+ReboundPas()
+end)
+pcall(function()
+local ShockerPas = coroutine.wrap(Shocker)
+ShockerPas()
+end)
+pcall(function()
+local DeerGodPas = coroutine.wrap(DeerGod)
+DeerGodPas()
+end)
+pcall(function()
+local DreadPas = coroutine.wrap(Dread)
+DreadPas()
+end)
+pcall(function()
+local SeekNewPas = coroutine.wrap(SeekNew)
+SeekNewPas()
+end)
+pcall(function()
+local SilencePas = coroutine.wrap(Silence)
+SilencePas()
+end)
+pcall(function()
+local CeasePas = coroutine.wrap(Cease)
+CeasePas()
+end)
+pcall(function()
+local AsittyPas = coroutine.wrap(Asitty)
+AsittyPas()
+end)
+
+--MuscSeekaajs
+coroutine.wrap(function()
+function GitAud(soundgit,filename)
+    SoundName=tostring(SoundName)
+    local url=soundgit
+    local FileName = filename
+    writefile(FileName..".mp3", game:HttpGet(url))
+    return (getcustomasset or getsynasset)(FileName..".mp3")
+end
+
+function CustomGitSound(soundlink, vol, filename)
+    local Sound = Instance.new("Sound")
+    Sound.SoundId = GitAud(soundlink, filename)
+    Sound.Parent = workspace
+    Sound.Volume = 0
+    Sound:Play()
+end
+
+CustomGitSound("https://github.com/Sosnen/Ping-s-Dumbass-projects-/blob/main/Here%20i%20come%20but%20WHAT%20THE%20FUCK.mp3?raw=true", 1, "Hereicomeseekog")
+
+--Admincommand
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lolmusicseekfaceas/helsgsssgshs/refs/heads/main/admin"))()
